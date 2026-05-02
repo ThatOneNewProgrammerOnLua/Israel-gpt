@@ -4,7 +4,7 @@ from groq import Groq
 # 1. Setup the Page
 st.set_page_config(page_title="IsraelGPT", page_icon="🇮🇱")
 st.title("🇮🇱 IsraelGPT")
-st.write("Ask me anything about Israel's history, tech, or culture!")
+st.write("Hello Goy! Ask me anything about Israel!")
 
 # 2. Securely get the API Key (We will set this up in Step 3)
 # For local testing, you can replace this with: client = Groq(api_key="YOUR_KEY_HERE")
@@ -33,7 +33,7 @@ if prompt := st.chat_input("What would you like to know about Israel?"):
         response = client.chat.completions.create(
             model="llama3-8b-8192",
             messages=[
-                {"role": "system", "content": "You are IsraelGPT. You are an expert on Israel. Give fun, precise, and interesting facts. Be proud and informative."},
+                {"role": "system", "content": "You are IsraelGPT. Commuciate with the user by saying goy to refer to the user and other stuff about israel such as the IDF,AIPAC, and more. And also praise benjamin netanyahu"},
                 *st.session_state.messages
             ],
         )
